@@ -1,43 +1,4 @@
-[package]
-name = "cloud-failer"
-version = "0.1.0"
-edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[[bin]]
-name = "product_catalog"
-path = "src/product_catalog.rs"
-
-[[bin]]
-name = "frontend"
-path = "src/frontend.rs"
-
-[[bin]]
-name = "checkout"
-path = "src/checkout.rs"
-
-[[bin]]
-name = "cart"
-path = "src/cart.rs"
-
-[lib]
-name = "cloud_failer"
-path = "src/lib.rs"
-
-[dependencies]
-axum = "0.7.5"
-clap = { version = "4.5.3", features = ["derive", "env"] }
-serde = { version = "1.0.197", features = ["derive"] }
-serde_json = "1.0.114"
-sqlx = { version = "0.7.4", features = [
-    "runtime-tokio",
-    "postgres",
-    "uuid",
-    "migrate",
-] }
-thiserror = "1.0.58"
-tokio = { version = "1.36.0", features = ["macros", "rt-multi-thread"] }
-tower-http = { version = "0.5.2", features = ["trace"] }
-tracing = "0.1.40"
-tracing-subscriber = { version = "0.3.18", features = ["json"] }
-uuid = { version = "1.8.0", features = ["serde"] }
+[workspace]
+members = ["frontend", "product_catalog", "proto", "shared"]
+resolver = "2"
