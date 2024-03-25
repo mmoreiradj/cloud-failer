@@ -28,7 +28,6 @@ async fn main() {
         .expect("failed to connect to product catalog");
 
     let state = AppState {
-        frontend_config: args.clone(),
         product_catalog_client: Arc::new(Mutex::new(products_svc)),
     };
 

@@ -1,8 +1,5 @@
 use clap::Parser;
-use std::{
-    net::{IpAddr, Ipv4Addr, SocketAddr},
-    path::PathBuf,
-};
+use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 use tracing::Level;
 
 #[derive(Parser, Debug, Clone)]
