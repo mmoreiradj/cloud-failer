@@ -1,0 +1,19 @@
+syntax = "proto3";
+package cloudfailer.productcatalog;
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string image_url = 3;
+    float price = 4;
+}
+
+message ListProductsResponse {
+    repeated Product results = 1;
+}
+
+message ListProductsRequest {}
+
+service Products {
+    rpc ListProducts(ListProductsRequest) returns (ListProductsResponse);
+}
